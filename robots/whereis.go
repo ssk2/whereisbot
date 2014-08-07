@@ -10,7 +10,7 @@ import (
 type WhereIsBot struct {
 }
 
-var userLocationsMap map[string]map[string]string
+var userLocationsMap = make(map[string]map[string]string)
 
 func init() {
 	for source := range Config.Sources {
