@@ -10,21 +10,21 @@ import (
 type WhereIsBot struct {
 }
 
-var userLocationsMap = make(map[string]map[string]string)
+var userUrlMap = make(map[string]string)
 
 func init() {
 	for source := range Config.Sources {
 		name := Config.Sources[source].Name
 		url := Config.Sources[source].URL
-		userLocationsMap[name] = getAndCreateMap(url)
+		userUrlMap[name] = url
 	}
 }
 
 func (w WhereIsBot) Run(command *SlashCommand) (slashCommandImmediateReturn string) {
-	locationMap, contains := userLocationsMap[command.Text]
-
+	url, contains := userUrlMap[command.Text]
 	if contains {
-		location := lookupLocation(locationMap)
+		userLocationMap := getAndCreateMap(url)
+		location := lookupLocation(userLocationMap)
 		return command.Text + " says: " + location
 	} else {
 		return "Sorry, no such user"
