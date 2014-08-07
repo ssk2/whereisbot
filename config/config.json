@@ -2,7 +2,7 @@
     "domain": "{mesosphere}",
     "port": 1111,
     "token": "{Uy0tfzHPs0cWdEKfzQ8gthFk}",
-    "source": [
+    "sources": [
     	{
     		"name" : "matt",
     		"url" : "https://gist.githubusercontent.com/ssk2/9b3ed2af22310d927cb4/raw/"
