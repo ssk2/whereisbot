@@ -1,6 +1,15 @@
 {
-    "domain": "{exdata}",
-    "port": 80,
-    "token": "{KCMz4GmLLe49aTvOHPpWGN0v}",
-    "source": "https://gist.githubusercontent.com/ssk2/9b3ed2af22310d927cb4/raw/"
+    "domain": "{mesosphere}",
+    "port": 1111,
+    "token": "{Uy0tfzHPs0cWdEKfzQ8gthFk}",
+    "source": [
+    	{
+    		"name" : "matt",
+    		"url" : "https://gist.githubusercontent.com/ssk2/9b3ed2af22310d927cb4/raw/"
+    	}, 
+    	{
+    		"name" : "sunil",
+    		"url" :  "https://gist.githubusercontent.com/ssk2/5ead926c756568ef3f22/raw/"
+    	}
+    ]
 }

@@ -10,20 +10,31 @@ import (
 type WhereIsBot struct {
 }
 
+var userLocationsMap map[string]map[string]string
+
 func init() {
+	for source := range Config.Sources {
+		name := Config.Sources[source].Name
+		url := Config.Sources[source].URL
+		userLocationsMap[name] = getAndCreateMap(url)
+	}
 }
 
 func (w WhereIsBot) Run(command *SlashCommand) (slashCommandImmediateReturn string) {
-	// command.Command
-	latestMap := getAndCreateMap()
-	location := lookupLocation(latestMap)
-	return location
+	locationMap, contains := userLocationsMap[command.Text]
+
+	if contains {
+		location := lookupLocation(locationMap)
+		return command.Text + " says: " + location
+	} else {
+		return "Sorry, no such user"
+	}
 }
 
-func getAndCreateMap() map[string]string {
+func getAndCreateMap(url string) map[string]string {
 	var locations = make(map[string]string)
 
-	resp, err := http.Get(Config.Source)
+	resp, err := http.Get(url)
 	if err != nil {
 		return locations
 	}
@@ -50,5 +61,6 @@ func lookupLocation(locations map[string]string) string {
 }
 
 func today() string {
-	return time.Now().Format("02/01/2006")
+	local, _ := time.LoadLocation("America/Los_Angeles")
+	return time.Now().In(local).Format("02/01/2006")
 }

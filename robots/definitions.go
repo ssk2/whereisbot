@@ -42,8 +42,13 @@ type AttachmentField struct {
 }
 
 type Configuration struct {
-	Domain string `schema:"domain"`
-	Port   int    `schema:"port"`
-	Token  string `schema:"token"`
-	Source string `schema:"source"`
+	Domain  string `schema:"domain"`
+	Port    int    `schema:"port"`
+	Token   string `schema:"token"`
+	Sources []Gist `schema:"sources"`
+}
+
+type Gist struct {
+	Name string `schema:"name"`
+	URL  string `schema:"url"`
 }
