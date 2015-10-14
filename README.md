@@ -76,6 +76,13 @@ dcos marathon app add marathon.json
 
 See the instructions [here](https://api.slack.com/slash-commands).
 
+Once set up, you'll get output like:
+
+```
+slackbot [12:16 AM] Only you can see this message
+Peter is working from New York
+```
+
 # TODO:
 
 + Add Google Calendar Integration
