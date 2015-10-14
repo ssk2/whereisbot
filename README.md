@@ -58,7 +58,7 @@ docker run -p 80:8080 -e SOURCE_JSON=https://path/to/dates.json ssk2/whereisbot
 
 # Test
 
-Visit [http://localhost/whereis] to see the output. If no location is defined for that date, it will return `undefined`. If a location is found, it will return the value of the location field.
+Visit [http://localhost/whereis](http://localhost/whereis) to see the output. If no location is defined for that date, it will return `undefined`. If a location is found, it will return the value of the location field.
 
 # Deploy
 
