@@ -24,11 +24,11 @@ Here's an example JSON file:
       "locations": [
         {
           "date": "2015-10-13",
-          "location": "New York"
+          "location": "working from New York"
         },
         {
           "date": "2015-10-14",
-          "location": "London"
+          "location": "flying to London"
         }
       ]
     },
@@ -37,11 +37,11 @@ Here's an example JSON file:
       "locations": [
         {
           "date": "2015-10-13",
-          "location": "Jakarta"
+          "location": "on vacation in Jakarta"
         },
         {
           "date": "2015-10-14",
-          "location": "Tokyo"
+          "location": "flying to Tokyo"
         }
       ]
     }
