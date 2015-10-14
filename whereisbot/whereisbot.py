@@ -8,7 +8,7 @@ source_json = os.environ["SOURCE_JSON"]
 def _get_by_date(name, date):
     locations_map = _load_locations_map(name)
     if date.date() in locations_map:
-        return "{0} is {1}".format(name, locations_map[date.date()]
+        return "{0} is {1}".format(name, locations_map[date.date()])
     else:
         return "undefined"
 
