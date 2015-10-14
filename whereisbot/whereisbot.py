@@ -37,7 +37,7 @@ def whereis():
     today = datetime.datetime.today()
     if request.method == 'POST':
         user = request.form.get('user_name')
-        name = request.form.get('text').lower()
+        name = request.form.get('text')
     else:
         user = request.args.get('user_name')
         name = request.args.get('text')
